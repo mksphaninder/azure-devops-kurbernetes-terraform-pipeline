@@ -28,4 +28,4 @@ stages:
   jobs:
   - job: QAJob
     steps:
-    - bash: QA Job Build
+    - bash: echo QA Job Build
