@@ -13,15 +13,15 @@ pool:
 
 jobs:
 - job: Job1
-    steps:
-    - script: echo job1
-      displayName: 'Run a one-line script'
-
-    - script: | # multiline syntax
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-      displayName: 'Run a multi-line script'
+  steps:
+  - script: echo job1
+    displayName: 'Run a one-line script'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+      echo more information
+    displayName: 'Run a multi-line script'
 - job: Job2
-    steps:
-      - script: echo job2
-        displayName: 'One -line script again'
+  steps:
+    - script: echo job2
+      displayName: 'One -line script again'
