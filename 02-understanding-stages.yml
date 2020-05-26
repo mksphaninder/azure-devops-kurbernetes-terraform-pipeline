@@ -14,21 +14,21 @@ stages:
   jobs:
   - job: FirstJob
     steps: 
-    -bash: echo Build FirstJob
+    - bash: echo Build FirstJob
   - job: SecondJob
     steps:
-    -bash: echo Second Build
+    - bash: echo Second Build
 
 - stage: DevDeploy
   jobs:
   - job: DevDeployJob
     steps: 
-    -bash: echo Build DevDeployJob
+    - bash: echo Build DevDeployJob
 - stage: QADeploy
   jobs:
   - job: QAJob
     steps:
-    -bash: QA Job Build
+    - bash: QA Job Build
 
 steps:
 - script: echo Hello, world!
