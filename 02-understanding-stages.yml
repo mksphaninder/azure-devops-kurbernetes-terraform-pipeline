@@ -10,6 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
+
 - stage: Build
   jobs:
   - job: FirstJob
@@ -18,14 +19,20 @@ stages:
   - job: SecondJob
     steps:
     - bash: echo Second Build
+    - bash: echo $(pipelineLevelVariables)
 
 - stage: DevDeploy
+  variables:
+    environment: Dev
   jobs:
   - job: DevDeployJob
     steps: 
-    - bash: echo Build DevDeployJob
+    - bash: echo Build $(environment)DeployJob
 - stage: QADeploy
   jobs:
   - job: QAJob
+    variables: 
+      environment: QA
     steps:
     - bash: echo QA Job Build
+    - bash: echo $(environment) job build
