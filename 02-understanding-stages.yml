@@ -28,11 +28,15 @@ stages:
   - job: DevDeployJob
     steps: 
     - bash: echo Build $(environment)DeployJob
-- stage: QADeploy
-  jobs:
-  - job: QAJob
-    variables: 
-      environment: QA
-    steps:
-    - bash: echo QA Job Build
-    - bash: echo $(environment) job build
+    - bash: echo $(Agent.OS)
+    - bash: echo $(Build.ArtifactStagingDirectory)
+    - bash: echo $(Build.ArtifactStagingDirectory)
+    - bash: echo $(Build.Repository.Name)
+# - stage: QADeploy
+#   jobs:
+#   - job: QAJob
+#     variables: 
+#       environment: QA
+#     steps:
+#     - bash: echo QA Job Build
+#     - bash: echo $(environment) job build
